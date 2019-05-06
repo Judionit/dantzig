@@ -584,16 +584,16 @@ document.onload = (function(d3, saveAs, Blob, undefined){
         yLoc = 100;
   
     // initial node data
-    var nodes = [{title: "new concept", id: 0, x: xLoc, y: yLoc},
-                 {title: "new concept", id: 1, x: xLoc, y: yLoc + 200}];
-    var edges = [{source: nodes[1], target: nodes[0]}];
+    // var nodes = [{title: "new concept", id: 0, x: xLoc, y: yLoc},
+    //              {title: "new concept", id: 1, x: xLoc, y: yLoc + 200}];
+    // var edges = [{source: nodes[1], target: nodes[0]}];
   
   
     /** MAIN SVG **/
     var svg = d3.select("div#right").append("svg")
           .attr("width", width)
           .attr("height", height);
-    var graph = new GraphCreator(svg, nodes, edges);
+    var graph = new GraphCreator(svg, donnees.nodes, donnees.links);
         graph.setIdCt(2);
     graph.updateGraph();
   })(window.d3, window.saveAs, window.Blob);
