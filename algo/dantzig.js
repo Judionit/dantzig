@@ -1,10 +1,10 @@
 var donnees = {
     "nodes": [
+        { title: 'S', lambda: 0, fixed: true, x: 100, y:200},
         { title: 'A', lambda: 0, fixed: true, x: 200, y:100},
         { title: 'B', lambda: 0, fixed: true, x: 500, y:100},
         { title: 'C', lambda: 0, fixed: true, x: 200, y:300},
         { title: 'D', lambda: 0, fixed: true, x: 500, y:300},
-        { title: 'S', lambda: 0, fixed: true, x: 100, y:200},
         { title: 'T', lambda: 0, fixed: true, x: 600, y:200}
     ],
     "links" :  [
@@ -122,11 +122,11 @@ function findLinksByTargetNode(graph, toPointB) {
  */
 function min(links) {
     let indMin = 0,
-        max = links[0].lambda + links[0].capacite;
+        minimum = links[0].lambda + links[0].capacite;
     for(var i = 1; i < links.length; i++){
         let kajy = links[i].lambda + links[i].capacite;
-        if(kajy > max) {
-            max = links[i];
+        if(kajy < minimum) {
+            minimum = links[i];
             indMin = i;
         }
     }
